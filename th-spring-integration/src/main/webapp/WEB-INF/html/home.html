@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<meta charset="UTF-8"/>
+<title>Thymeleaf example</title>
+</head>
+
+<body>
+<h1 th:text="#{home.title}">Thymeleaf example</h1>
+
+<h3 th:text="#{hotel.information}">Hotel Information</h3>
+
+<span th:text="${hotelData.name}">Hotel name</span><br />
+<span th:text="${hotelData.address}">Hotel address</span><br />
+</body>
+</html>
