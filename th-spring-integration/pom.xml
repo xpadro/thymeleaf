@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
+  		<spring.version>4.0.1.RELEASE</spring.version>
 		<thymeleaf.version>2.1.2.RELEASE</thymeleaf.version>
 		<servlet.version>3.1.0</servlet.version>
 		<log4j.version>1.2.16</log4j.version>
@@ -21,13 +22,13 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context</artifactId>
-		    <version>4.0.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 		 
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-webmvc</artifactId>
-		    <version>4.0.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 
 		<!-- Thymeleaf -->
@@ -35,17 +36,7 @@
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf-spring3</artifactId>
 			<version>${thymeleaf.version}</version>
-			<scope>compile</scope>
 		</dependency>
-		<!-- Dependency to dialect example. Remove when done. -->
-		<!-- 
-		<dependency>
-			<groupId>net.sourceforge.pagesdialect</groupId>
-			<artifactId>pagesdialect-core</artifactId>
-			<version>1.0.0-beta4</version>
-			<scope>provided</scope>
-		</dependency>
-		-->
 
 		<!-- Servlet -->
 		<dependency>
@@ -56,11 +47,6 @@
 		</dependency>
 
 		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -76,7 +62,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.0.0.RELEASE</version>
+			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -85,7 +71,6 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -95,21 +80,9 @@
 			<!-- Plugin for compile options -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
-				</configuration>
-			</plugin>
-			<!-- Plugin for test configuration -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.16</version>
-				<configuration>
-					<includes>
-						<include>**/*Test*.java</include>
-					</includes>
 				</configuration>
 			</plugin>
 		</plugins>
