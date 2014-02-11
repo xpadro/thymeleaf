@@ -77,7 +77,6 @@
 		<finalName>th-spring-integration</finalName>
 
 		<plugins>
-			<!-- Plugin for compile options -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>

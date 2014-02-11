@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+	<div th:fragment="resultsList(guests)">
+		<table>
+			<thead>
+				<tr>
+					<th th:text="#{seedstarter.datePlanted}">Surname</th>
+					<th th:text="#{seedstarter.covered}">Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="guest : ${guests}">
+					<td th:text="${{guest.name}}">Xavi</td>
+					<td th:text="${{guest.surname}}">Padro</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
