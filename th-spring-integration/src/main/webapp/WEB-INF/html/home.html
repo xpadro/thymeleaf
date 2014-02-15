@@ -7,6 +7,7 @@
 <title>Thymeleaf example</title>
 <link rel="stylesheet" th:href="@{/spring/resources/css/styles.css}" type="text/css" media="screen"/>
 <script th:src="@{/spring/resources/js/functions.js}" type="text/javascript"></script>
+<script th:src="@{/spring/resources/js/jquery-min-1.9.1.js}" type="text/javascript"></script>
 </head>
 
 <body>
@@ -19,21 +20,21 @@
 	<span th:text="${hotelData.address}">Hotel address</span><br />
 </div>
 
-
+<form>
 <div class="main-block">
 	<div class="search-block">
-		<label for="searchName">Search name:</label>
+		<label for="searchName" th:text="#{search.label}">Search label:</label>
 		<input type="text" id="searchName" name="searchName"/> 
 		
-		<button id="searchButton" name="searchButton" onclick="testFragment3('hola')" type="button">Search</button>
+		<button id="searchButton" name="searchButton" onclick="retrieveGuests('hola')" type="button" th:text="#{search.button}">Search button</button>
 	</div>
 	
 	<!-- Results block -->
-	<div id="resultsBlock" class="results-block" th:unless="${#lists.isEmpty(guests)}">
+	<div id="resultsBlock">
 		
 	</div>
 </div>
-
+</form>
 
 </body>
 </html>
