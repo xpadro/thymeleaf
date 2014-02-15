@@ -1,19 +1,31 @@
 package xpadro.thymeleaf.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import xpadro.thymeleaf.model.Guest;
 import xpadro.thymeleaf.model.HotelData;
+import xpadro.thymeleaf.repository.HotelRepository;
 
 @Service("hotelServiceImpl")
 public class HotelServiceImpl implements HotelService {
+	@Autowired
+	HotelRepository hotelRepository;
 
 	@Override
-	public HotelData retrieveHotelData() {
+	public HotelData getHotelData() {
 		HotelData data = new HotelData();
 		data.setAddress("Catalunya Square, 225");
 		data.setName("Barcelona Hotel");
 		
 		return data;
+	}
+
+	@Override
+	public List<Guest> getGuestsList() {
+		return hotelRepository.findAll();
 	}
 
 }

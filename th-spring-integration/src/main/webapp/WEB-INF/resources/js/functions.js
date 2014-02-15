@@ -1,3 +1,3 @@
 function retrieveGuests(guestName) {
-	$("#resultsBlock").load("/th-spring-integration/spring/test/retornFragment");
+	$("#resultsBlock").load("/th-spring-integration/spring/guests");
 }
