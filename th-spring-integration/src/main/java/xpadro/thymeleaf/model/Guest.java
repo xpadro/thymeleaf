@@ -3,7 +3,9 @@ package xpadro.thymeleaf.model;
 import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "guests")
 public class Guest implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
