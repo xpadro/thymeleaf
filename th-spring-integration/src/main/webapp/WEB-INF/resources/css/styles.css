@@ -6,11 +6,9 @@ body {
 .generic-info {
 	box-sizing:border-box;
 	height:auto;
-	margin:0;
 	-moz-box-sizing:border-box;
 	padding:0;
 	margin:0;
-	width:50%;
 	display:block;
 	margin-bottom:30px;
 }
@@ -18,26 +16,36 @@ body {
 .main-block {
 	box-sizing:border-box;
 	height:auto;
-	margin:0;
 	-moz-box-sizing:border-box;
 	padding:0;
-	margin:0;
-	width:50%;
 	display:block;
 }
 
+.insertBlock {
+	overflow:hidden;
+	padding:5px;
+	display:block;
+	float:left;
+	width:100%;
+	border:1px solid #cdcdcd;
+	margin-bottom:20px;
+}
+
+.listBlock {
+	overflow:hidden;
+	padding:5px;
+	display:block;
+	float:left;
+	width:100%;
+}
+
 .search-block {
-	/*border:1px solid #cdcdcd;*/
-	display:inline-block;
-	position:relative;
 	width:100%;
 	padding:0;
 	margin:0;
 }
 
 .results-block {
-	display:inline-block;
-	position:relative;
 	width:100%;
 	padding:0;
 	margin:0;
@@ -52,4 +60,15 @@ table,th,td {
 
 th,td {
 	padding:5px;
+}
+
+label {
+	font-size:small;
+}
+
+.subtitle {
+	font-size:20px;
+	color:#336699;
+	margin:0;
+	margin-top:20px;
 }

@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<div style="width:800px; margin:0 auto;">
+
 <h1 th:text="#{home.title}">Thymeleaf example</h1>
 
 <div class="generic-info">
@@ -20,21 +22,59 @@
 	<span th:text="${hotelData.address}">Hotel address</span><br />
 </div>
 
-<form>
-<div class="main-block">
-	<div class="search-block">
-		<label for="searchName" th:text="#{search.label}">Search label:</label>
-		<input type="text" id="searchName" name="searchName"/> 
-		
-		<button id="searchButton" name="searchButton" onclick="retrieveGuests('hola')" type="button" th:text="#{search.button}">Search button</button>
-	</div>
-	
-	<!-- Results block -->
-	<div id="resultsBlock">
-		
-	</div>
-</div>
-</form>
 
+<div class="main-block">
+	<!-- Insert new guest -->
+	<span class="subtitle">Add guest form</span>
+	<form id="guestForm" th:action="@{/spring/guests/insertion}" th:object="${guest}" method="post">
+		<div class="insertBlock">
+			<span style="float:left;margin:0;width:48%">
+				<input id="guestId" type="text" th:field="*{id}" required="required"/>
+				<br />
+				<label for="guestId" th:text="#{insert.id}">id:</label>
+			</span>
+			<span style="float:left;margin:0;width:48%;margin-bottom:20px">
+				<input id="guestName" type="text" th:field="*{name}" required="required"/>
+				<br />
+				<label for="guestName" th:text="#{insert.name}">name:</label>
+			</span>
+			
+			<span style="float:left;margin:0;width:48%">
+				<input id="guestSurname" type="text" th:field="*{surname}" required="required"/>
+				<br />
+				<label for="guestSurname" th:text="#{insert.surname}">surname:</label>
+			</span>
+			<span style="float:left;margin:0;width:48%;margin-bottom:20px">
+				<input id="guestCountry" type="text" th:field="*{country}" required="required"/>
+				<br />
+				<label for="guestCountry" th:text="#{insert.country}">country:</label>
+			</span>
+			
+			<input type="submit" value="add" th:value="#{insert.submit}"/>
+		</div>
+	</form>
+
+	<!-- Guests list -->
+	<form>
+		<span class="subtitle">Guest list form</span>
+		<div class="listBlock">
+			<div class="search-block">
+				<input type="text" id="searchName" name="searchName"/>
+				<br />
+				<label for="searchName" th:text="#{search.label}">Search label:</label>
+				
+				<button id="searchButton" name="searchButton" onclick="retrieveGuests('hola')" type="button" th:text="#{search.button}">Search button</button>
+			</div>
+			
+			<!-- Results block -->
+			<div id="resultsBlock">
+				
+			</div>
+		</div>
+		
+	</form>
+</div>
+
+</div>
 </body>
 </html>

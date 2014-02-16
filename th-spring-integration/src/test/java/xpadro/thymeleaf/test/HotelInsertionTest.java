@@ -26,14 +26,14 @@ public class HotelInsertionTest {
 	@Test
 	public void insert() throws Exception {
 		Guest guest = new Guest();
-		guest.setId(5837);
+		guest.setId(5837l);
 		guest.setName("John");
 		guest.setSurname("Smith");
 		guest.setCountry("Scotland");
 		mongoOps.insert(guest);
 		
 		guest = new Guest();
-		guest.setId(3726);
+		guest.setId(3726l);
 		guest.setName("Marc");
 		guest.setSurname("Thomas");
 		guest.setCountry("Norway");

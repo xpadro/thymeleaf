@@ -18,4 +18,10 @@ public interface HotelService {
 	 * @return guests list
 	 */
 	List<Guest> getGuestsList();
+	
+	/**
+	 * Registers a new guest
+	 * @param newGuest
+	 */
+	void insertNewGuest(Guest newGuest);
 }

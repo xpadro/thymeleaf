@@ -28,4 +28,9 @@ public class HotelServiceImpl implements HotelService {
 		return hotelRepository.findAll();
 	}
 
+	@Override
+	public void insertNewGuest(Guest newGuest) {
+		hotelRepository.save(newGuest);
+	}
+
 }
