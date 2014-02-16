@@ -11,7 +11,7 @@ import xpadro.thymeleaf.model.Guest;
 import xpadro.thymeleaf.service.HotelService;
 
 @Controller
-public class HomeController {
+public class HotelController {
 	private static final String HOME_VIEW = "/home";
 	private static final String RESULTS_FRAGMENT = "results :: resultsList";
 	
