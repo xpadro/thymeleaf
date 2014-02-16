@@ -14,10 +14,17 @@ public interface HotelService {
 	HotelData getHotelData();
 	
 	/**
-	 * Returns all guests registered to the hotel
+	 * Returns all guests registered at the hotel
 	 * @return guests list
 	 */
 	List<Guest> getGuestsList();
+	
+	/**
+	 * Returns all guests registered at the hotel with the specified surname
+	 * @param name
+	 * @return
+	 */
+	List<Guest> getGuestsList(String surname);
 	
 	/**
 	 * Registers a new guest

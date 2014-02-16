@@ -28,6 +28,11 @@ public class HotelServiceImpl implements HotelService {
 	public List<Guest> getGuestsList() {
 		return hotelRepository.findAll();
 	}
+	
+	@Override
+	public List<Guest> getGuestsList(String surname) {
+		return hotelRepository.findGuestsBySurname(surname);
+	}
 
 	@Override
 	public void insertNewGuest(Guest newGuest) {
@@ -37,5 +42,4 @@ public class HotelServiceImpl implements HotelService {
 		
 		hotelRepository.save(newGuest);
 	}
-
 }

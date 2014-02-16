@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,6 +42,13 @@ public class HotelController {
 	}
 	
 	
+	@RequestMapping(value = "/guests/{name}", method = RequestMethod.GET)
+	public String showGuestList(Model model, @PathVariable("name") String surname) {
+		model.addAttribute("guests", hotelService.getGuestsList(surname));
+
+		return RESULTS_FRAGMENT;
+	}
+	
 	@RequestMapping(value = "/guests", method = RequestMethod.GET)
 	public String showGuestList(Model model) {
 		model.addAttribute("guests", hotelService.getGuestsList());
@@ -48,7 +56,7 @@ public class HotelController {
 		return RESULTS_FRAGMENT;
 	}
 	
-	@RequestMapping(value = "/guests/insertion", method = RequestMethod.POST)
+	@RequestMapping(value = "/guests/insert", method = RequestMethod.POST)
 	public String showGuestList(Guest newGuest, Model model) {
 		hotelService.insertNewGuest(newGuest);
 		

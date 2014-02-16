@@ -26,7 +26,7 @@
 <div class="main-block">
 	<!-- Insert new guest -->
 	<span class="subtitle">Add guest form</span>
-	<form id="guestForm" th:action="@{/spring/guests/insertion}" th:object="${guest}" method="post">
+	<form id="guestForm" th:action="@{/spring/guests/insert}" th:object="${guest}" method="post">
 		<div class="insertBlock">
 			<span style="float:left;margin:0;width:48%">
 				<input id="guestId" type="text" th:field="*{id}" required="required"/>
@@ -64,7 +64,7 @@
 				<br />
 				<label for="searchName" th:text="#{search.label}">Search label:</label>
 				
-				<button id="searchButton" name="searchButton" onclick="retrieveGuests('hola')" type="button" th:text="#{search.button}">Search button</button>
+				<button id="searchButton" name="searchButton" onclick="retrieveGuests()" type="button" th:text="#{search.button}">Search button</button>
 			</div>
 			
 			<!-- Results block -->
