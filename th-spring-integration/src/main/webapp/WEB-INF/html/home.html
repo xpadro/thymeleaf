@@ -51,6 +51,7 @@
 			</span>
 			
 			<input type="submit" value="add" th:value="#{insert.submit}"/>
+			<span class="messageContainer" th:unless="${#strings.isEmpty(errorMessage)}" th:text="#{${errorMessage}}"></span>
 		</div>
 	</form>
 

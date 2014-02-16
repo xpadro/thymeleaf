@@ -3,11 +3,15 @@ package xpadro.thymeleaf.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import xpadro.thymeleaf.exception.GuestFoundException;
 import xpadro.thymeleaf.model.Guest;
+import xpadro.thymeleaf.model.HotelData;
 import xpadro.thymeleaf.service.HotelService;
 
 @Controller
@@ -22,10 +26,15 @@ public class HotelController {
 	public Guest prepareGuestModel() {
 		return new Guest();
 	}
+	
+	@ModelAttribute("hotelData")
+	public HotelData prepareHotelDataModel() {
+		return hotelService.getHotelData();
+	}
 
 	@RequestMapping(value = HOME_VIEW, method = RequestMethod.GET)
 	public String showHome(Model model) {
-		model.addAttribute("hotelData", hotelService.getHotelData());
+		prepareHotelDataModel();
 		prepareGuestModel();
 		
 		return HOME_VIEW;
@@ -44,5 +53,16 @@ public class HotelController {
 		hotelService.insertNewGuest(newGuest);
 		
 		return showHome(model);
+	}
+	
+	@ExceptionHandler({GuestFoundException.class})
+	public ModelAndView handleDatabaseError(GuestFoundException e) {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home");
+		modelAndView.addObject("errorMessage", "error.user.exist");
+		modelAndView.addObject("guest", prepareGuestModel());
+		modelAndView.addObject("hotelData", prepareHotelDataModel());
+		
+		return modelAndView;
 	}
 }

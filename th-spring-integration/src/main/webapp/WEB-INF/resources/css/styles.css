@@ -72,3 +72,9 @@ label {
 	margin:0;
 	margin-top:20px;
 }
+
+.messageContainer {
+	margin-left:40px;
+	color:red;
+	font-size:20px;
+}

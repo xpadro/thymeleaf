@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import xpadro.thymeleaf.exception.GuestFoundException;
 import xpadro.thymeleaf.model.Guest;
 import xpadro.thymeleaf.model.HotelData;
 import xpadro.thymeleaf.repository.HotelRepository;
@@ -30,6 +31,10 @@ public class HotelServiceImpl implements HotelService {
 
 	@Override
 	public void insertNewGuest(Guest newGuest) {
+		if (hotelRepository.exists(newGuest.getId())) {
+			throw new GuestFoundException();
+		}
+		
 		hotelRepository.save(newGuest);
 	}
 
