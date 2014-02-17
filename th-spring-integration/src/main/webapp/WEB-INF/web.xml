@@ -20,7 +20,7 @@
 	<!-- @Configuration classes or package -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>xpadro.thymeleaf.configuration</param-value>
+		<param-value>xpadro.thymeleaf.configuration.WebAppConfiguration</param-value>
 	</context-param>
 
 	<!-- Spring servlet -->

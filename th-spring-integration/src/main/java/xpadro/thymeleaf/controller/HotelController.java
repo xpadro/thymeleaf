@@ -17,7 +17,7 @@ import xpadro.thymeleaf.service.HotelService;
 
 @Controller
 public class HotelController {
-	private static final String HOME_VIEW = "/home";
+	private static final String HOME_VIEW = "home";
 	private static final String RESULTS_FRAGMENT = "results :: resultsList";
 	
 	@Autowired
@@ -33,7 +33,7 @@ public class HotelController {
 		return hotelService.getHotelData();
 	}
 
-	@RequestMapping(value = HOME_VIEW, method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String showHome(Model model) {
 		prepareHotelDataModel();
 		prepareGuestModel();
