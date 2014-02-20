@@ -78,3 +78,9 @@ label {
 	color:red;
 	font-size:20px;
 }
+
+.formSpan {
+	float:left;
+	margin:0;
+	width:48%;
+}
