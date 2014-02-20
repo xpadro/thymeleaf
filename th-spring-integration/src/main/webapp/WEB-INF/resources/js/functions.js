@@ -1,8 +1,8 @@
 function retrieveGuests() {
 	var url = '/th-spring-integration/spring/guests';
 	
-	if ($('#searchName').val() != '') {
-		url = url + '/' + $('#searchName').val();
+	if ($('#searchSurname').val() != '') {
+		url = url + '/' + $('#searchSurname').val();
 	}
 	
 	$("#resultsBlock").load(url);

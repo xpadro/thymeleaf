@@ -42,8 +42,8 @@ public class HotelController {
 	}
 	
 	
-	@RequestMapping(value = "/guests/{name}", method = RequestMethod.GET)
-	public String showGuestList(Model model, @PathVariable("name") String surname) {
+	@RequestMapping(value = "/guests/{surname}", method = RequestMethod.GET)
+	public String showGuestList(Model model, @PathVariable("surname") String surname) {
 		model.addAttribute("guests", hotelService.getGuestsList(surname));
 
 		return RESULTS_FRAGMENT;
