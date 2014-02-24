@@ -57,7 +57,7 @@ public class HotelController {
 	}
 	
 	@RequestMapping(value = "/guests/insert", method = RequestMethod.POST)
-	public String showGuestList(Guest newGuest, Model model) {
+	public String insertGuest(Guest newGuest, Model model) {
 		hotelService.insertNewGuest(newGuest);
 		
 		return showHome(model);
